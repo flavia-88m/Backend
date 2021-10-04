@@ -53,7 +53,7 @@ let libros = [
 
 libros.push(userBooks);
 
-const filtered = libros.filter(librosName => 
+const filtered = libros.map(librosName => 
     librosName.nombre
     );
 
