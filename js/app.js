@@ -11,8 +11,10 @@ class User {
        console.log(`El nombre del usuario es ${this.name} y su apellido ${this.surname}`)
     }
 
+    static nameMascota = ('mia')
+
     addMascota() {
-       console.log(`El nombre de la mascota es ${this.pets}`)
+       console.log(`El nombre de la mascota es `, User.nameMascota)
     }
 
     countMascotas() {
@@ -26,7 +28,7 @@ class User {
     }
 
     getBookNames() {
-        console.log(filtered)
+        console.log(newArr)
     }
 
     }     
@@ -53,7 +55,7 @@ let libros = [
 
 libros.push(userBooks);
 
-const filtered = libros.map(librosName => 
+const newArr = libros.map(librosName => 
     librosName.nombre
     );
 
