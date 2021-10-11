@@ -4,66 +4,53 @@ class User {
     constructor(name, surname, pets, books){
         this.name = name;
         this.surname = surname;
-        this.pets = pets;
-        this.books = books;
+        this.pets = ['lola', 'camilo', 'ringo'];
+        this.books = [
+            {
+             nombre: 'Pet sementary',
+             autor: 'Stephen King'
+            },
+            {
+             nombre: 'Doctor Sleep',
+             autor: 'Stephen King'
+            }
+        ];
+        
     }
     getFullName() {
        console.log(`El nombre del usuario es ${this.name} y su apellido ${this.surname}`)
     }
 
-    static nameMascota = ('mia')
 
-    addMascota() {
-       console.log(`El nombre de la mascota es `, User.nameMascota)
+    addMascota(mascota) {
+        this.pets.push(mascota);
+        console.log(mascota)
     }
 
     countMascotas() {
-        console.log(`El usuario tiene ${(mascotas.length)} mascotas`)
+        console.log(`El usuario tiene ${(this.pets.length)} mascotas`)
     }
     
-    static nameAutor = ({nombre: 'The black cat', autor:'Edgar Allan Poe'})
     
-    addBooks () {
-        console.log(`El nombre del libro y del autor es`, User.nameAutor) 
+    addBooks(name, author) {
+     const userBook = {nombre: name, autor: author}
+        this.books.push(userBook);
+        console.log(userBook)
     }
 
     getBookNames() {
-        console.log(newArr)
-    }
+    console.log(this.books.map(libroName=> libroName.nombre))
+    }   
 
-    }     
+}
 
-const user = new User('Flavia', 'Maldonado')
-
-const userPet = new User('mia')
-
-let mascotas = ['lola', 'camilo', 'ringo'];
-mascotas.push(userPet);
-
-
-const userBooks = new User({nombre: 'The black cat', autor:'Edgar Allan Poe'})
-let libros = [
-    {
-     nombre: 'Pet sementary',
-     autor: 'Stephen King'
-    },
-    {
-     nombre: 'Doctor Sleep',
-     autor: 'Stephen King'
-    }
-];
-
-libros.push(userBooks);
-
-const newArr = libros.map(librosName => 
-    librosName.nombre
-    );
+const usuario = new User('Flavia', 'Maldonado')
 
 
 // Invocación de sus métodos
 
-user.getFullName();
-userPet.addMascota();
-userBooks.getBookNames();
-userBooks.addBooks();
-userPet.countMascotas();
+usuario.getFullName();
+usuario.addMascota('mia');
+usuario.getBookNames();
+usuario.addBooks('The black cat','Edgar Allan Poe');
+usuario.countMascotas();
