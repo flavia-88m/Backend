@@ -2,7 +2,6 @@ const fs = require("fs");
 const { get } = require("http");
 
 
-
 class Contenedor {
     constructor(file) {
       this.file = this.file;
