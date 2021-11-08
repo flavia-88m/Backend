@@ -1,13 +1,11 @@
-const fs = require("fs");
-const { get } = require("http");
+import fs from "fs";
 
-
-class Contenedor {
+export default class Contenedor {
     constructor(file) {
       this.file = this.file;
       this.list = async () => {
         try {
-          const result = await fs.readFile(this.file, {encoding:"utf-8"})
+          const result = await fs.promises.readFile(this.file, {encoding:"utf-8"})
           return JSON.parse(result)
         } catch (err) {
           return err
@@ -16,7 +14,7 @@ class Contenedor {
     }
   
    async save(obj){
-     let getList = await this.list();
+     let getList = await this.promises.list();
      //agregar el id a obj y guardar en list de productos 
      getList.push(obj)
      // se obtiene el último id
@@ -25,7 +23,7 @@ class Contenedor {
      idObj ? obj.id = idObj.id + 1 : obj.id = 1
      
      try {
-        await fs.writeFile(this.file, JSON.stringify(getList, null, 2), {encoding: "utf-8"})
+        await fs.promises.writeFile(this.file, JSON.stringify(getList, null, 2), {encoding: "utf-8"})
         return true
      } 
      catch(err) {
@@ -35,7 +33,7 @@ class Contenedor {
 
     async getById(num) {
       try{
-        const result = await fs.readFile(this.file, {encoding:"utf-8"})
+        const result = await fs.promises.readFile(this.file, {encoding:"utf-8"})
 
         const products = JSON.parse(result)
         //Encuentra el id del producto
@@ -49,7 +47,7 @@ class Contenedor {
     async getAll(){
       let products = "array de objetos"
       try{
-        const result = await fs.readFile(this.file, {encoding:"utf-8"})
+        const result = await fs.promises.readFile(this.file, {encoding:"utf-8"})
 
         products = JSON.parse(result)
         return products
@@ -60,11 +58,11 @@ class Contenedor {
     
  async deleteById(number){
   try {
-    const result = await fs.readFile(this.file, {encoding:"utf-8"})
+    const result = await fs.promises.readFile(this.file, {encoding:"utf-8"})
     const products = JSON.parse(result)
     const filteredList = products.filter(p => p.id !== number)
 
-  await fs.writeFile(this.file, JSON.stringify(filteredList,null,2), {encoding:"utf-8"})
+  await fs.promises.writeFile(this.file, JSON.stringify(filteredList,null,2), {encoding:"utf-8"})
   return true
   } catch(err) {
     throw err
@@ -73,12 +71,12 @@ class Contenedor {
 
  async listById(number, product){
    try{
-     const res = await fs.readFile(this.file, {encoding:"utf-8"})
+     const res = await fs.promises.readFile(this.file, {encoding:"utf-8"})
      const products = JSON.parse(res)
      const i = products.findIndex(p => p.id === number)
      product.id = number
      products[i] = product
-     await fs.writeFile(this.file, JSON.stringify(products,null,2) , {encoding:"utf-8"})
+     await fs.promises.writeFile(this.file, JSON.stringify(products,null,2) , {encoding:"utf-8"})
    return true
     } catch(err) {
 
@@ -86,7 +84,7 @@ class Contenedor {
  }
     async deleteAll(){
       try{
-        await fs.writeFile(this.file, JSON.stringify([], null,2 ), {encoding:"utf-8"})
+        await fs.promises.writeFile(this.file, JSON.stringify([], null,2 ), {encoding:"utf-8"})
       return true 
       }catch (err) {
         throw err
