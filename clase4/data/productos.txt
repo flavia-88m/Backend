@@ -1,4 +1,4 @@
-  ]
+  [ 
    {                                                                                                                                                    
       "title": "Lenovo ThinkPad E15 2da Gen (15.6”, Intel)",                                                                                                                                 
       "price": 173999,                                                                                                                                     

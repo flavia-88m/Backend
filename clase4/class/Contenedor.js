@@ -2,7 +2,7 @@ import fs from "fs";
 
 export default class Contenedor {
     constructor(file) {
-      this.file = this.file;
+      this.file = file;
       this.list = async () => {
         try {
           const result = await fs.promises.readFile(this.file, {encoding:"utf-8"})
