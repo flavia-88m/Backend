@@ -1,0 +1,17 @@
+[
+  {
+    "id": 2
+  },
+  {
+    "title": "Cámara web Lenovo 500 FHD",
+    "price": 10299,
+    "thumbnail": "https://www.lenovo.com/medias/4XC0V13599-01-500x400.png?context=bWFzdGVyfHJvb3R8MTAzMTg1fGltYWdlL3BuZ3xoZGYvaDVkLzExMDQ1MTIyMzQyOTQyLnBuZ3wyZGY1NTI5YWRmMDgzNmIxZDczYzY1MWYzNzg1N2Q5NjAwZDMzZmRlNDE2MmVhNzE5M2NmODMzZDNiZTMyNmFk",
+    "id": 4
+  },
+  {
+    "title": "Mouse inalámbrico ThinkPad Essential",
+    "price": 4299,
+    "thumbnail": "https://www.lenovo.com/medias/1-1-.png?context=bWFzdGVyfHJvb3R8ODY5MDczfGltYWdlL3BuZ3xoMjIvaDA3LzEyNjI3MDQ4NzkyMDk0LnBuZ3w1MDRiOTI0MGQzOTliODFkMjdkMjkwOWNkMzQ1ODQ4MWM1YTQxZjUxYWI1ZTM1OWM4ZThhNWFiMWUwM2Y3ZTVh",
+    "id": 5
+  }
+]
